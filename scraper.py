@@ -50,7 +50,7 @@ def get_fecha(caldo):
 
 
 if __name__ == '__main__':
-    output_dir = 'output_daniel/'
+    output_dir = 'output_daniel_ec2/'
     file_prefix = 'data_daniel_'
     input_file = 'df_Daniel.csv'
     
