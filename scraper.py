@@ -51,7 +51,10 @@ def get_fecha(caldo):
 
 if __name__ == '__main__':
     output_dir = ''
-    df_link = pd.read_csv('df_Joel.csv')
+    file_prefix = 'data_joel'
+    input_file = 'df_Joel.csv'
+    
+    df_link = pd.read_csv(input_file)
     links = df_link['link']
     titles = []
     authors = []
@@ -74,7 +77,7 @@ if __name__ == '__main__':
             df_data = df_data.from_dict({"title": titles, "author": authors, "abstractstract": abstracts, "main_subject": main_subjs,
                                          "other_subjects": subjects, "submission_date": dates})
 
-            df_data.to_csv(output_dir+'data_joel{}.csv'.format(counter), index=False)
+            df_data.to_csv(output_dir+file_prefix+'{}.csv'.format(counter), index=False)
 
             titles = []
             authors = []
@@ -104,4 +107,4 @@ if __name__ == '__main__':
     df_data = df_data.from_dict({"title": titles, "author": authors, "abstract": abstracts, "main_subject": main_subjs,
                                  "other_subjects": subjects, "submission_date": dates})
 
-    df_data.to_csv(output_dir+'data_joel{}.csv'.format(counter), index=False)
+    df_data.to_csv(output_dir+file_prefix+'{}.csv'.format(counter), index=False)
