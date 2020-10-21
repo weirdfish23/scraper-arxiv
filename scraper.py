@@ -5,6 +5,11 @@ import requests
 import re
 import math
 from tqdm import tqdm
+import logging
+
+logFile = 'scraping.log'
+logging.basicConfig(filename=logFile, filemode='a', level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 
 def get_caldo(url):
@@ -55,9 +60,13 @@ if __name__ == '__main__':
     dates = []
     counter = 0
     batch_size = 1000
+    log_freq = 100
 
     for url in tqdm(links):
         counter += 1
+
+        if counter % log_freq == 0:
+            logging.debug('Count:: {}'.format(counter))
 
         if counter % batch_size == 0:
             df_data = pd.DataFrame()
