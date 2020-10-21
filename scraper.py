@@ -50,9 +50,9 @@ def get_fecha(caldo):
 
 
 if __name__ == '__main__':
-    output_dir = './'
-    file_prefix = 'data_joel'
-    input_file = 'df_Joel.csv'
+    output_dir = 'output_daniel/'
+    file_prefix = 'data_daniel_'
+    input_file = 'df_Daniel.csv'
     
     df_link = pd.read_csv(input_file)
     links = df_link['link']
