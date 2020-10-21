@@ -62,7 +62,7 @@ if __name__ == '__main__':
     batch_size = 1000
     log_freq = 100
 
-    for url in tqdm(links):
+    for url in links:
         counter += 1
 
         if counter % log_freq == 0:
