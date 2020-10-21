@@ -62,11 +62,11 @@ if __name__ == '__main__':
     subjects = []
     abstracts = []
     dates = []
-    counter = 0
+    counter = 30000 - 1
     batch_size = 1000
     log_freq = 100
 
-    for url in links:
+    for url in links.iloc[counter:]:
         counter += 1
 
         if counter % log_freq == 0:
