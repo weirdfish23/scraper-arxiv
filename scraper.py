@@ -50,7 +50,7 @@ def get_fecha(caldo):
 
 
 if __name__ == '__main__':
-    output_dir = ''
+    output_dir = './'
     file_prefix = 'data_joel'
     input_file = 'df_Joel.csv'
     
@@ -63,12 +63,12 @@ if __name__ == '__main__':
     abstracts = []
     dates = []
     counter = 0
-    batch_size = 1000
+    batch_size = 10
     log_freq = 100
 
     for url in links:
         counter += 1
-
+ 
         if counter % log_freq == 0:
             logging.debug('Count:: {}'.format(counter))
 
